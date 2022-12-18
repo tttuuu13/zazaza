@@ -18,11 +18,11 @@ def start(message):
 
 
 @bot.message_handler(content_types=['text', 'photo'],
-                     func=lambda message: message.chat.id != -771376836 
+                     func=lambda message: message.chat.id != -820699648 
                      and (message.text in subjects or message.caption in subjects))
 def forward(message):
     bot.send_message(message.chat.id, random.choice(answers))
-    bot.forward_message(-771376836, from_chat_id=message.chat.id, message_id=message.message_id)
+    bot.forward_message(-820699648, from_chat_id=message.chat.id, message_id=message.message_id)
 
 @server.route('/' + '5879551227:AAG2HSXqGAS592uAdkhTZqEFuiLoUXIEjXw', methods=['POST'])
 def getMessage():
