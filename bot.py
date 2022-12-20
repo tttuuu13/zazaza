@@ -21,7 +21,7 @@ def start(message):
 @bot.message_handler(content_types=['text', 'photo'],
                      func=lambda message: message.chat.id != -820699648)
 def forward(message):
-    print(message.caption)
+    print(message.text)
     if len([i for i in message.caption.split() if i in subjects]) > 0:
         bot.send_message(message.chat.id, random.choice(answers))
         bot.forward_message(-820699648, from_chat_id=message.chat.id, message_id=message.message_id)
