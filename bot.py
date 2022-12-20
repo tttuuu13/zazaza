@@ -8,14 +8,13 @@ server = Flask(__name__)
 bot = telebot.TeleBot('5879551227:AAG2HSXqGAS592uAdkhTZqEFuiLoUXIEjXw')
 
 subjects = ["#алгебра", "#русский", "#литра", "#англ", "#история", "#башяз", "#башлит", "#астрономия"]
-answers = ["хорош", "лучший", "спс"]
+answers = ["ура", "лучш", "спс", "пон"]
 
 
 
 @bot.message_handler(commands=['start'])
 def start(message):
     bot.send_message(message.chat.id, "салам")
-
 
 @bot.message_handler(content_types=['text', 'photo'],
                      func=lambda message: message.chat.id != -820699648)
@@ -33,6 +32,7 @@ def forward(message):
                 bot.send_message(message.chat.id, random.choice(answers))
                 bot.forward_message(-820699648, from_chat_id=message.chat.id, message_id=message.message_id)
                 return
+
 
 @server.route('/' + '5879551227:AAG2HSXqGAS592uAdkhTZqEFuiLoUXIEjXw', methods=['POST'])
 def getMessage():
