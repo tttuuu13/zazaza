@@ -16,6 +16,13 @@ answers = ["ура", "лучш", "спс", "пон"]
 def start(message):
     bot.send_message(message.chat.id, "салам")
 
+    
+ @bot.message_handler(content_types=['text'],
+                     func=lambda message: message.text[:4] == "спам")
+def spam(message):
+    bot.send_message(-1001872907051, message.text[4:])
+    
+
 @bot.message_handler(content_types=['text', 'photo'],
                      func=lambda message: message.chat.id != -1001872907051)
 def forward(message):
