@@ -17,7 +17,7 @@ def start(message):
     bot.send_message(message.chat.id, "салам")
 
 @bot.message_handler(content_types=['text', 'photo'],
-                     func=lambda message: message.chat.id != -1872907051)
+                     func=lambda message: message.chat.id == -1872907051)
 def forward(message):
     print(message.text)
     print(message.caption)
