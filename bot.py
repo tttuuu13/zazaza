@@ -17,8 +17,7 @@ def start(message):
     bot.send_message(message.chat.id, "салам")
 
     
- @bot.message_handler(content_types=['text'],
-                     func=lambda message: message.text[:4] == "спам")
+@bot.message_handler(content_types=['text'], func=lambda message: message.text[:4] == "спам")
 def spam(message):
     bot.send_message(-1001872907051, message.text[4:])
     
