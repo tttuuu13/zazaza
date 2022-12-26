@@ -17,7 +17,7 @@ def start(message):
     bot.send_message(message.chat.id, "салам")
 
 @bot.message_handler(content_types=['text', 'photo'],
-                     func=lambda message: message.chat.id == -1872907051)
+                     func=lambda message: message.chat.id != -1001872907051)
 def forward(message):
     print(message.text)
     print(message.caption)
@@ -25,13 +25,13 @@ def forward(message):
         for i in subjects:
             if i in message.text:
                 bot.send_message(message.chat.id, random.choice(answers))
-                bot.forward_message(-1872907051, from_chat_id=message.chat.id, message_id=message.message_id)
+                bot.forward_message(-1001872907051, from_chat_id=message.chat.id, message_id=message.message_id)
                 return 
     if message.caption != None:
         for i in subjects:
             if i in message.caption:
                 bot.send_message(message.chat.id, random.choice(answers))
-                bot.forward_message(-1872907051, from_chat_id=message.chat.id, message_id=message.message_id)
+                bot.forward_message(-1001872907051, from_chat_id=message.chat.id, message_id=message.message_id)
                 return
 
 
