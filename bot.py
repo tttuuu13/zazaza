@@ -20,6 +20,7 @@ def start(message):
                      func=lambda message: message.chat.id != -1872907051)
 def forward(message):
     print(message.text)
+    print(message.caption)
     if message.text != None:
         for i in subjects:
             if i in message.text:
